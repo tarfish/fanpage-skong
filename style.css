@@ -54,6 +54,9 @@ body {
     cursor: pointer;
     font-size: 18px;
     font-weight: 600;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);    
     transition: background-color 0.3s ease;
+    hover {
+        background-color: rgb(180, 175, 150);
+    }
 }
