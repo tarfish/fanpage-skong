@@ -1,18 +1,4 @@
-let correctAnswers = 0;
-function checkAnswer1() {
-    // Get the selected radio for question 1 (name="q1")
-    const selected = document.querySelector('input[name="q1"]:checked');
-    
-    if (!selected) {
-        alert("Where's your answer, mate?");
-        return;
+    const nav = performance.getEntriesByType("navigation")[0];
+    if (nav?.type === "reload" || (performance.navigation && performance.navigation.type === 1)) {
+        location.href = "index.html";
     }
-
-    if (selected.value === 'a') {
-        correctAnswers += 1;
-    }
-
-    // Update the result display (edit the element id if your HTML uses a different one)
-    document.getElementById('result').textContent = 'Number of correct answers: ' + correctAnswers;
-    document.getElementById('submit-q1').disabled = true;
-}
