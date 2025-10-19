@@ -21,11 +21,23 @@ function renderQuestion() {
             <button type="button" onclick="checkAnswer2()" id="submit-q2">Submit Answer</button>
             <button type="button" onclick="nextQuestion()" id="next-q2">Next Question</button>
         `;
-    } else {
+    }
+    
+    else if (currentQuestion === 3) {
+        myDiv.innerHTML = `
+            <label>How does Hornet heal?</label><br>
+            <input type="radio" name="q3" value="a"> By reaping enemy souls<br>
+            <input type="radio" name="q3" value="b"> By walking on lava<br>
+            <input type="radio" name="q3" value="c"> By binding silk<br>
+            <button type="button" onclick="checkAnswer3()" id="submit-q3">Submit Answer</button>
+            <button type="button" onclick="nextQuestion()" id="next-q3">Next Question</button>
+        `;
+    }
+    else {
         myDiv.innerHTML = `
             <h3>Quiz complete!</h3>
             <p>You got ${correctAnswers} correct answers.</p>
-            <button onclick="window.location.href='index.html'">Back to Home</button>
+            <button type="button" onclick="goHome()">Back to Home</button>
         `;
     }
 }
@@ -59,6 +71,23 @@ function checkAnswer2() {
     }
     document.getElementById('result').textContent = 'Correct answers: ' + correctAnswers;
     document.getElementById('submit-q2').disabled = true;
+}
+
+function checkAnswer3() {
+    const selected = document.querySelector('input[name="q3"]:checked');
+    if (!selected) {
+        alert("Where's your answer, mate?");
+        return;
+    }
+    if (selected.value === 'c') {
+        correctAnswers++;
+    }
+    document.getElementById('result').textContent = 'Correct answers: ' + correctAnswers;
+    document.getElementById('submit-q3').disabled = true;
+}
+
+function goHome() {
+    window.location.href = "index.html";
 }
 
 const navEntries = performance.getEntriesByType("navigation");
