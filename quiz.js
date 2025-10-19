@@ -12,7 +12,11 @@ function checkAnswer1() {
         correctAnswers += 1;
     }
 
-    // Update the result display (edit the element id if your HTML uses a different one)
     document.getElementById('result').textContent = 'Number of correct answers: ' + correctAnswers;
     document.getElementById('submit-q1').disabled = true;
 }
+
+  const navEntries = performance.getEntriesByType("navigation");
+  if (navEntries.length > 0 && navEntries[0].type === "reload") {
+    window.location.href = "index.html";
+  }
