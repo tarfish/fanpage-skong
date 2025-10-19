@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Quiz :o</title>
     <link rel="stylesheet" href="quiz.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <h1>Silksong Quiz</h1>
@@ -15,9 +16,10 @@
                 <input type="radio" name="q1" value="a"> Hornet<br>
                 <input type="radio" name="q1" value="b"> The Knight<br>
                 <input type="radio" name="q1" value="c"> Zote<br>
-                <button type="button" onclick="checkAnswer1()">Submit Answer</button>
+                <button type="button" onclick="checkAnswer1()" id="submit-q1">Submit Answer</button>
             </div>
         </form>
+        <p id="result">Number of correct answers: </p>
     </div>
 </body>
 </html>
